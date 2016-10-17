@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="UTF-8">
+  <title>运城旅游</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="apple-mobile-web-app-title" content="旅游" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="full-screen" content="yes" />
+  <meta name="browsermode" content="application" />
+  <!-- QQ全屏、应用模式 -->
+  <meta name="x5-fullscreen" content="true" />
+  <meta name="x5-page-mode" content="app" />
+  <meta name="keywords" content="旅游线路,景点门票,酒店预订">
+  <meta name="description" content="为广大用户提供周边旅游,景点门票,酒店预订,自驾游,国内游,出境旅游线路等预订服务,更专业,品质有保证,让您旅游更安心。">
+  <link rel="stylesheet" type="text/css" href="../../css/base.css" />
+  <!-- <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css" /> -->
+</head>
+
+<body>
+  <header class="index-header">
+    <div class="search-input-wrap">
+      <div class="search-input" data-target-show=".index-search"><span>搜索目的地、景点、酒店等</span></div>
+      <div class="search-button"></div>
+    </div>
+  </header>
+  <section class="index-banner">
+    <div id='slider' class='swipe'>
+      <script type="text/html" id="tpl-banner">
+        <div class="swipe-wrap">
+          <%for(var i=0;i<banner.length;i++){%>
+            <div>
+              <a href="<%=banner[i].href%>">
+                <img src="<%=banner[i].img%>" alt="Chania">
+              </a>
+            </div>
+            <%}%>
+        </div>
+        <div class="swipe-pagination">
+          <%for(var i=0;i<banner.length;i++){%>
+            <span class="swipe-pagination-bullet <%=i==0?'swipe-pagination-bullet-active':''%>"></span>
+            <%}%>
+        </div>
+      </script>
+    </div>
+  </section>
+  <section class="index-entrance">
+    <script type="text/html" id="tpl-entrance-list">
+      <ul style="overflow: hidden;">
+        <%for(var i=0;i<entrance.length;i++){%>
+          <li class="col">
+            <a href=""><img data-lazyload="true" src="http://static.juntu.com/images/transparent.gif" data-original="<%=entrance[i].img%>">
+              <div><%=entrance[i].title%></div>
+            </a>
+          </li>
+          <%}%>
+      </ul>
+    </script>
+  </section>
+  <section class="index-recommend">
+    <div class="mui-tabs">
+      <ul class="">
+        <li class="active" data-floorid="1">周末high翻天</li>
+        <li class="" data-floorid="2">长假去哪玩</li>
+      </ul>
+    </div>
+    <div class="mui-tabs-slide">
+      <div class="slide-box pages" style="transition-property: transform; transition-timing-function: cubic-bezier(0, 0, 0.25, 1); transition-duration: 350ms; transform: translate3d(0px, 0px, 0px);">
+        <script type="text/html" id="tpl-tabs-slide-list">
+          <%for(var i=0;i<slides.length;i++){%>
+            <li class="col" data-idx="<%=i%>">
+              <a href="/order/show?id=<%=slides[i].id%>">
+                <div class="slide-list-pic">
+                  <div class="slide-list-tag"><span>门票</span>
+                    <%=slides[i].areaName%>
+                  </div>
+                  <img data-lazyload="true" data-original="<%=slides[i].img%>" src="<%=slides[i].img%>">
+                  <div class="slide-list-title">
+                    <%=slides[i].title%>
+                  </div>
+                </div>
+                <div class="slide-list-sub-title">
+                  <%=slides[i].describe%>
+                </div>
+                <div class="slide-list-price">
+                  <%=slides[i].price%><span>起</span></div>
+              </a>
+            </li>
+            <%}%>
+        </script>
+        <ul class="slide-list clearfix j_list page" data-idx="1" data-tabid="1">
+        </ul>
+        <ul class="slide-list clearfix j_list page hidden" data-idx="2" data-tabid="2">
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="index-search fadeInRight hidden">
+    <header class="search-header"><a href="javascript:void(0)" class="header-left_icon" id="search-back" data-target=".index-search"><i class="iconfont">&#xe679;</i></a>
+      <div class="searchbar"><i class="iconfont">&#xe65c;</i>
+        <div class="searchbar-input">
+          <input value="" type="text" class="autocompleter" placeholder="搜索目的地、景点、酒店等" autocapitalize="off">
+        </div><i class="iconfont searchbar-close" id="search-clean">&#xe646;</i></div>
+    </header>
+    <div class="search-content-wapper">
+      <div class="search-hot hide"></div>
+      <div class="search-histroy-wapper hide">
+        <ul class="search-histroy list-active"></ul>
+        <div class="search-histroy-clear"><span>清除搜索历史</span></div>
+      </div>
+      <div class="search-list-wapper hide"></div>
+    </div>
+  </section>
+  <script type="text/javascript" src="../../dist/js/root.js"></script>
+  <script type="text/javascript" src="../../lib/swipe.js"></script>
+  <!-- <script type="text/javascript" src="../../lib/jquery.lazyload.min.js"></script> -->
+  <script type="text/javascript" src="../../dist/js/index/index-entry.js"></script>
+</body>
+
+</html>

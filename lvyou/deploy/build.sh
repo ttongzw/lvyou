@@ -1,0 +1,1 @@
+uglifyjs ./lib/zepto.js ./lib/template-native.js ./js/common/lvyou.js ./js/common/loading.js ./js/common/ajax.js -o ./dist/js/root.js
