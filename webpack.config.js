@@ -2,7 +2,7 @@
 
 var fs = require('fs');
 var path = require('path');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+// var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var entries = function(basePath) {
   var entry = {},
@@ -41,7 +41,7 @@ module.exports = {
     }]
   },
   plugins: [
-    new ExtractTextPlugin("styles.css"), 
+    // new ExtractTextPlugin("styles.css"), 
     // new ExtractTextPlugin("[name].css")
   ]
 }

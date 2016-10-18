@@ -3,9 +3,6 @@
 var data = require('./data.js');
 var html = '';
 
-
-
-
 html = template('tpl-banner', data);
 $('#slider').html(html);
 

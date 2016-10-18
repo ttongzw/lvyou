@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="UTF-8">
+  <title>运城旅游</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="apple-mobile-web-app-title" content="旅游" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="full-screen" content="yes" />
+  <meta name="browsermode" content="application" />
+  <!-- QQ全屏、应用模式 -->
+  <meta name="x5-fullscreen" content="true" />
+  <meta name="x5-page-mode" content="app" />
+  <meta name="keywords" content="旅游线路,景点门票,酒店预订">
+  <meta name="description" content="为广大用户提供周边旅游,景点门票,酒店预订,自驾游,国内游,出境旅游线路等预订服务,更专业,品质有保证,让您旅游更安心。">
+  <link rel="stylesheet" type="text/css" href="../../css/base.css" />
+  <!-- <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css" /> -->
+</head>
+
+<body>
+  <section class="index-banner">
+    <div id='slider' class='swipe' style="visibility: visible;">
+    </div>
+  </section>
+  <section class="index-recommend">
+    <div class="mui-tabs-slide">
+      <div class="slide-header">门票</div>
+      <div class="slide-box pages">
+      </div>
+    </div>
+  </section>
+  <script type="text/html" id="tpl-banner">
+    <div class="swipe-wrap">
+      <%for(var i=0;i<banner.length;i++){%>
+        <div style="display:<%=i>0?'none':'block'%>">
+          <a href="<%=banner[i].href%>">
+                <img src="<%=banner[i].img%>" alt="Chania">
+              </a>
+        </div>
+        <%}%>
+    </div>
+  </script>
+  <script type="text/html" id="tpl-tabs-slide-list">
+    <ul class="slide-list clearfix j_list page" data-idx="1" data-tabid="1">
+      <%for(var i=0;i<slides.length;i++){%>
+        <li class="col ticket-item">
+          <h2 class="ticket-item-title"><%=slides[i].title%> <%=slides[i].type%></h2>
+          <div class="ticket-info">
+            <p class="ticket-tips">
+              <%=slides[i].tips%>
+            </p>
+            <div class="ticket-all-item-coupon">
+              <%if(slides[i].cut){%>
+                <span class="jm-cut-flag"><%=slides[i].cut%></span>
+                <%}%>
+                  <%if(slides[i].coupon){%>
+                    <span class="jm-coupon-flag"><%=slides[i].coupon%></span>
+                    <%}%>
+            </div>
+            <span class="buy-tips" data-order-tips-url="">购买须知</span>
+            <div class="ticket-price-wapper">
+              <div class="pull-left">
+                <em class="ticket-price-jt">￥<%=slides[i].pricejt%> </em>
+                <del class="ticket-price-mt">￥
+                  <%=slides[i].pricemt%>
+                </del>
+              </div>
+              <div class="pull-left ticket-price-btn active" data-ticket-order-href="">
+                <span class="ticket-price-btn-text">订购</span>
+                <span class="ticket-price-btn-info">在线支付</span>
+              </div>
+            </div>
+          </div>
+        </li>
+        <%}%>
+    </ul>
+  </script>
+  <script type="text/javascript" src="../../dist/js/root.js"></script>
+  <script type="text/javascript" src="../../lib/swipe.js"></script>
+  <!-- <script type="text/javascript" src="../../lib/jquery.lazyload.min.js"></script> -->
+  <script type="text/javascript" src="../../dist/js/show/index-entry.js"></script>
+</body>
+
+</html>

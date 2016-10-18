@@ -2,6 +2,7 @@ body {
   background-color: #efeff4;
   color: #333;
   font-size: 12px;
+  line-height: 1.5;
 }
 body a {
   color: #333;
@@ -123,8 +124,7 @@ section {
 .index-header .search-input-wrap .search-input {
   margin-left: 10px;
 }
-.search-button {
-}
+.search-button {}
 
 /*index-entrance*/
 
@@ -244,4 +244,99 @@ section {
 .mui-tabs-slide .slide-list .col a img {
   width: 100%;
   height: auto;
+}
+
+/*ticket info*/
+
+.slide-header {
+  font-size: 1.5em;
+  text-indent: 10px;
+  padding: 5px;
+  font-weight: bold;
+}
+.ticket-item {
+  padding: 10px;
+  position: relative;
+  background-color: #f6f6f6;
+}
+.ticket-item .ticket-item-title {
+  font-size: 1.2em;
+}
+.ticket-item .ticket-tips {
+  color: #f90;
+  font-size: 1em;
+}
+.ticket-item .jm-cut-flag {
+  font-size: 10px;
+  background-color: #f60;
+  padding: 0 3px;
+  color: #fff;
+  margin-right: 3px;
+  border-radius: 2px;
+}
+.ticket-item .jm-coupon-flag {
+  font-size: 10px;
+  background-color: #00a5e0;
+  padding: 0 3px;
+  color: #fff;
+  margin-right: 3px;
+  border-radius: 2px;
+}
+.ticket-price-wapper {
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+  width: 160px;
+  box-sizing: border-box;
+}
+.ticket-price-wapper .ticket-price-jt {
+  font-size: 2em;
+  color: #f60;
+  text-align: right;
+  line-height: 1;
+  font-style: normal;
+}
+.ticket-price-wapper .ticket-price-mt {
+  font-size: 14px;
+  color: #757575;
+  padding: 0 5px;
+  text-decoration: line-through;
+  text-align: right;
+  display: block;
+}
+.ticket-price-wapper .ticket-price-btn {
+  width: 70px;
+  /*position: absolute;*/
+  text-align: center;
+  margin-left: 10px;
+}
+.ticket-price-wapper .ticket-price-btn.active .ticket-price-btn-text {
+  background-color: #f90;
+}
+.ticket-price-wapper .ticket-price-btn-text {
+  width: 100%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: #b2b2b2;
+  padding: 5px 0;
+  font-size: 16px;
+  color: #fff;
+  display: block;
+  line-height: 1;
+}
+.ticket-price-wapper .ticket-price-btn.active .ticket-price-btn-info {
+  color: #f90;
+  border-color: #f90;
+}
+.ticket-price-wapper .ticket-price-btn-info {
+  border: 1px solid #b2b2b2;
+  display: block;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 3px 0;
+  background-color: #fff;
+  width: 100%;
+  font-size: 14px;
+  box-sizing: border-box;
+  color: #b2b2b2;
 }
