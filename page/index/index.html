@@ -28,36 +28,9 @@
   </header>
   <section class="index-banner">
     <div id='slider' class='swipe'>
-      <script type="text/html" id="tpl-banner">
-        <div class="swipe-wrap">
-          <%for(var i=0;i<banner.length;i++){%>
-            <div>
-              <a href="<%=banner[i].href%>">
-                <img src="<%=banner[i].img%>" alt="Chania">
-              </a>
-            </div>
-            <%}%>
-        </div>
-        <div class="swipe-pagination">
-          <%for(var i=0;i<banner.length;i++){%>
-            <span class="swipe-pagination-bullet <%=i==0?'swipe-pagination-bullet-active':''%>"></span>
-            <%}%>
-        </div>
-      </script>
     </div>
   </section>
   <section class="index-entrance">
-    <script type="text/html" id="tpl-entrance-list">
-      <ul style="overflow: hidden;">
-        <%for(var i=0;i<entrance.length;i++){%>
-          <li class="col">
-            <a href=""><img data-lazyload="true" src="http://static.juntu.com/images/transparent.gif" data-original="<%=entrance[i].img%>">
-              <div><%=entrance[i].title%></div>
-            </a>
-          </li>
-          <%}%>
-      </ul>
-    </script>
   </section>
   <section class="index-recommend">
     <div class="mui-tabs">
@@ -68,28 +41,6 @@
     </div>
     <div class="mui-tabs-slide">
       <div class="slide-box pages" style="transition-property: transform; transition-timing-function: cubic-bezier(0, 0, 0.25, 1); transition-duration: 350ms; transform: translate3d(0px, 0px, 0px);">
-        <script type="text/html" id="tpl-tabs-slide-list">
-          <%for(var i=0;i<slides.length;i++){%>
-            <li class="col" data-idx="<%=i%>">
-              <a href="/order/show?id=<%=slides[i].id%>">
-                <div class="slide-list-pic">
-                  <div class="slide-list-tag"><span>门票</span>
-                    <%=slides[i].areaName%>
-                  </div>
-                  <img data-lazyload="true" data-original="<%=slides[i].img%>" src="<%=slides[i].img%>">
-                  <div class="slide-list-title">
-                    <%=slides[i].title%>
-                  </div>
-                </div>
-                <div class="slide-list-sub-title">
-                  <%=slides[i].describe%>
-                </div>
-                <div class="slide-list-price">
-                  <%=slides[i].price%><span>起</span></div>
-              </a>
-            </li>
-            <%}%>
-        </script>
         <ul class="slide-list clearfix j_list page" data-idx="1" data-tabid="1">
         </ul>
         <ul class="slide-list clearfix j_list page hidden" data-idx="2" data-tabid="2">
@@ -113,6 +64,55 @@
       <div class="search-list-wapper hide"></div>
     </div>
   </section>
+  <script type="text/html" id="tpl-banner">
+    <div class="swipe-wrap">
+      <%for(var i=0;i<banner.length;i++){%>
+        <div>
+          <a href="<%=banner[i].href%>">
+                <img src="<%=banner[i].img%>" alt="Chania">
+              </a>
+        </div>
+        <%}%>
+    </div>
+    <div class="swipe-pagination">
+      <%for(var i=0;i<banner.length;i++){%>
+        <span class="swipe-pagination-bullet <%=i==0?'swipe-pagination-bullet-active':''%>"></span>
+        <%}%>
+    </div>
+  </script>
+  <script type="text/html" id="tpl-entrance-list">
+    <ul style="overflow: hidden;">
+      <%for(var i=0;i<entrance.length;i++){%>
+        <li class="col">
+          <a href=""><img data-lazyload="true" src="http://static.juntu.com/images/transparent.gif" data-original="<%=entrance[i].img%>">
+              <div><%=entrance[i].title%></div>
+            </a>
+        </li>
+        <%}%>
+    </ul>
+  </script>
+  <script type="text/html" id="tpl-tabs-slide-list">
+    <%for(var i=0;i<slides.length;i++){%>
+      <li class="col" data-idx="<%=i%>">
+        <a href="/order/show?id=<%=slides[i].id%>">
+          <div class="slide-list-pic">
+            <div class="slide-list-tag"><span>门票</span>
+              <%=slides[i].areaName%>
+            </div>
+            <img data-lazyload="true" data-original="<%=slides[i].img%>" src="<%=slides[i].img%>">
+            <div class="slide-list-title">
+              <%=slides[i].title%>
+            </div>
+          </div>
+          <div class="slide-list-sub-title">
+            <%=slides[i].describe%>
+          </div>
+          <div class="slide-list-price">
+            <%=slides[i].price%><span>起</span></div>
+        </a>
+      </li>
+      <%}%>
+  </script>
   <script type="text/javascript" src="../../dist/js/root.js"></script>
   <script type="text/javascript" src="../../lib/swipe.js"></script>
   <!-- <script type="text/javascript" src="../../lib/jquery.lazyload.min.js"></script> -->
